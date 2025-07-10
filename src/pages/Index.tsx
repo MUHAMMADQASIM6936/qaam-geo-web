@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Quote } from 'lucide-react';
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -133,6 +132,42 @@ const HomePage = () => {
           <p className="text-lg md:text-xl mt-4 max-w-2xl mx-auto">
             Leading provider of geomembrane and geotextile installation services
           </p>
+        </div>
+      </section>
+
+      {/* Word from CEO Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Word from the CEO</h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-blue-50 rounded-lg p-8 md:p-12 relative">
+              <Quote className="absolute top-6 left-6 text-blue-900 opacity-20" size={48} />
+              
+              <div className="text-center mb-8">
+                <img 
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+                  alt="CEO"
+                  className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+                />
+                <h3 className="text-2xl font-bold text-blue-900 mb-1">Rajesh Kumar</h3>
+                <p className="text-blue-700 font-medium">Chief Executive Officer</p>
+              </div>
+
+              <blockquote className="text-lg text-gray-700 italic leading-relaxed text-center">
+                "Since founding QAAM Enterprises in 2009, our mission has been to provide unparalleled geomembrane and geotextile solutions that protect our environment and serve our communities. With over 15 years of experience, we have successfully completed hundreds of projects across Maharashtra and beyond. Our commitment to quality, innovation, and environmental stewardship drives everything we do. We take pride in our skilled team, cutting-edge technology, and unwavering dedication to client satisfaction. As we look to the future, QAAM Enterprises remains committed to being your trusted partner in environmental containment solutions."
+              </blockquote>
+
+              <div className="mt-8 text-center">
+                <div className="inline-block">
+                  <p className="text-blue-900 font-semibold text-lg">Rajesh Kumar</p>
+                  <p className="text-blue-700">CEO & Founder, QAAM Enterprises</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
