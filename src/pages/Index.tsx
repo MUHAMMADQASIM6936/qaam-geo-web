@@ -1,20 +1,26 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, Quote } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, Quote, ArrowUp, Filter } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link as ScrollLink, Element } from 'react-scroll';
 import LoadingScreen from '../components/LoadingScreen';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
 import ProjectCard from '../components/ProjectCard';
+import BackToTop from '../components/BackToTop';
+import ProjectTimeline from '../components/ProjectTimeline';
+import { Button } from '../components/ui/button';
 
 const HomePage = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [projectFilter, setProjectFilter] = useState('all');
 
   const navigationItems = [
     { name: 'Home', href: 'home' },
+    { name: 'About', href: 'about' },
     { name: 'Services', href: 'services' },
     { name: 'Projects', href: 'projects' },
+    { name: 'Clients', href: 'clients' },
     { name: 'Contact Us', href: 'contact' }
   ];
 
@@ -43,10 +49,12 @@ const HomePage = () => {
       client: 'City Water Department',
       location: 'Mumbai, Maharashtra',
       timeline: 'January 2023 - March 2023',
+      year: '2023',
       scope: 'Installation of HDPE geomembrane lining for 50,000L capacity water treatment pond including welding and quality testing.',
       image: 'https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?w=600&h=400&fit=crop',
       status: 'Completed',
-      tags: ['Geomembrane', 'HDPE', 'Water Treatment']
+      tags: ['Geomembrane', 'HDPE', 'Water Treatment'],
+      type: 'Geomembrane'
     },
     {
       id: 2,
@@ -54,34 +62,81 @@ const HomePage = () => {
       client: 'ABC Manufacturing Ltd.',
       location: 'Pune, Maharashtra', 
       timeline: 'August 2022 - October 2022',
+      year: '2022',
       scope: 'Design and installation of multi-layer geomembrane system for industrial waste containment with geotextile underlayment.',
       image: 'https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&h=400&fit=crop',
       status: 'Completed',
-      tags: ['Geomembrane', 'Geotextile', 'Industrial']
+      tags: ['Geomembrane', 'Geotextile', 'Industrial'],
+      type: 'Geomembrane'
     },
     {
       id: 3,
       title: 'Agricultural Pond Lining',
       client: 'Green Valley Farms',
       location: 'Nashik, Maharashtra',
-      timeline: 'May 2023 - June 2023', 
+      timeline: 'May 2023 - June 2023',
+      year: '2023',
       scope: 'Installation of geomembrane lining for irrigation pond including anchor trenching and protective layer installation.',
       image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop',
       status: 'Completed',
-      tags: ['Geomembrane', 'Agriculture', 'Irrigation']
+      tags: ['Geomembrane', 'Agriculture', 'Irrigation'],
+      type: 'Geomembrane'
+    },
+    {
+      id: 4,
+      title: 'Highway Drainage System',
+      client: 'State Highway Authority',
+      location: 'Delhi NCR',
+      timeline: 'March 2022 - May 2022',
+      year: '2022',
+      scope: 'Installation of geotextile fabric for highway drainage and soil stabilization along 15km stretch.',
+      image: 'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&h=400&fit=crop',
+      status: 'Completed',
+      tags: ['Geotextile', 'Highway', 'Drainage'],
+      type: 'Geotextile'
+    },
+    {
+      id: 5,
+      title: 'Telecom Infrastructure Setup',
+      client: 'Tech Networks Pvt Ltd',
+      location: 'Bangalore, Karnataka',
+      timeline: 'September 2023 - November 2023',
+      year: '2023',
+      scope: 'Complete networking infrastructure setup for telecom base stations including fiber optic installation.',
+      image: 'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=600&h=400&fit=crop',
+      status: 'Completed',
+      tags: ['Networking', 'Telecom', 'Infrastructure'],
+      type: 'Networking'
     }
+  ];
+
+  const clients = [
+    { name: 'City Water Department', logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=150&h=80&fit=crop' },
+    { name: 'ABC Manufacturing Ltd.', logo: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=150&h=80&fit=crop' },
+    { name: 'Green Valley Farms', logo: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=150&h=80&fit=crop' },
+    { name: 'State Highway Authority', logo: 'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=150&h=80&fit=crop' },
+    { name: 'Tech Networks Pvt Ltd', logo: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=150&h=80&fit=crop' },
+    { name: 'Municipal Corporation', logo: 'https://images.unsplash.com/photo-1508780709619-79562169bc64?w=150&h=80&fit=crop' }
   ];
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
 
+  const filteredProjects = projects.filter(project => {
+    if (projectFilter === 'all') return true;
+    return project.type.toLowerCase() === projectFilter.toLowerCase();
+  });
+
+  const uniqueYears = [...new Set(projects.map(p => p.year))].sort().reverse();
+  const projectTypes = ['all', 'Geomembrane', 'Geotextile', 'Networking'];
+
   if (isLoading) {
     return <LoadingScreen onLoadingComplete={handleLoadingComplete} />;
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white font-sans">
       {/* Navigation */}
       <nav className="bg-white shadow-lg fixed w-full z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -167,13 +222,83 @@ const HomePage = () => {
               Since 2009
             </motion.p>
             <motion.p 
-              className="text-base sm:text-lg md:text-xl mt-4 max-w-2xl mx-auto"
+              className="text-base sm:text-lg md:text-xl mt-4 max-w-2xl mx-auto mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.8 }}
             >
               Leading provider of geomembrane and geotextile installation services
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1.1 }}
+              className="space-x-4"
+            >
+              <ScrollLink to="contact" smooth={true} duration={500}>
+                <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
+                  Request a Quote
+                </Button>
+              </ScrollLink>
+              <ScrollLink to="projects" smooth={true} duration={500}>
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900">
+                  View Our Projects
+                </Button>
+              </ScrollLink>
+            </motion.div>
+          </div>
+        </section>
+      </Element>
+
+      {/* About Us Section */}
+      <Element name="about">
+        <section className="py-12 sm:py-20 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">About QAAM Enterprises</h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-blue-900 mb-6">Our Journey Since 2009</h3>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Founded in 2009, QAAM Enterprises has been at the forefront of geomembrane and geotextile solutions in India. What started as a vision to provide reliable environmental containment solutions has grown into a trusted name across Maharashtra and beyond.
+                </p>
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  With over 15 years of experience, we have successfully completed hundreds of projects ranging from municipal water treatment facilities to large-scale industrial applications. Our expertise spans across geomembrane installation, geotextile systems, and networking infrastructure.
+                </p>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                  <div className="bg-white p-6 rounded-lg shadow-md">
+                    <h4 className="font-bold text-blue-900 mb-2">Our Mission</h4>
+                    <p className="text-gray-600 text-sm">To provide innovative, reliable, and sustainable environmental solutions that protect our planet while serving our communities.</p>
+                  </div>
+                  <div className="bg-white p-6 rounded-lg shadow-md">
+                    <h4 className="font-bold text-blue-900 mb-2">Our Vision</h4>
+                    <p className="text-gray-600 text-sm">To be the leading provider of geomembrane and geotextile solutions across India, setting new standards in quality and innovation.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-blue-900 text-white p-6 rounded-lg text-center">
+                  <h4 className="text-3xl font-bold mb-2">15+</h4>
+                  <p className="text-blue-200">Years of Experience</p>
+                </div>
+                <div className="bg-blue-700 text-white p-6 rounded-lg text-center">
+                  <h4 className="text-3xl font-bold mb-2">500+</h4>
+                  <p className="text-blue-200">Projects Completed</p>
+                </div>
+                <div className="bg-blue-600 text-white p-6 rounded-lg text-center">
+                  <h4 className="text-3xl font-bold mb-2">10+</h4>
+                  <p className="text-blue-200">States Covered</p>
+                </div>
+                <div className="bg-blue-800 text-white p-6 rounded-lg text-center">
+                  <h4 className="text-3xl font-bold mb-2">100%</h4>
+                  <p className="text-blue-200">Client Satisfaction</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </Element>
@@ -216,7 +341,7 @@ const HomePage = () => {
 
       {/* Services Section */}
       <Element name="services">
-        <section className="py-12 sm:py-20 bg-gray-50">
+        <section className="py-12 sm:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
@@ -229,9 +354,10 @@ const HomePage = () => {
               {services.map((service, index) => (
                 <motion.div 
                   key={index} 
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
@@ -252,19 +378,36 @@ const HomePage = () => {
         </section>
       </Element>
 
-      {/* Projects Section */}
+      {/* Projects Section with Filter */}
       <Element name="projects">
-        <section className="py-12 sm:py-20 bg-white">
+        <section className="py-12 sm:py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Projects</h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+              <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
                 Showcasing our expertise through successful project implementations
               </p>
+
+              {/* Project Filters */}
+              <div className="flex flex-wrap justify-center gap-4 mb-8">
+                {projectTypes.map((type) => (
+                  <button
+                    key={type}
+                    onClick={() => setProjectFilter(type)}
+                    className={`px-6 py-2 rounded-full transition-colors ${
+                      projectFilter === type
+                        ? 'bg-blue-900 text-white'
+                        : 'bg-white text-gray-700 hover:bg-blue-100'
+                    }`}
+                  >
+                    {type === 'all' ? 'All Projects' : type}
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-              {projects.map((project, index) => (
+              {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 50 }}
@@ -273,6 +416,46 @@ const HomePage = () => {
                   viewport={{ once: true }}
                 >
                   <ProjectCard project={project} />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Project Timeline */}
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">Project Timeline</h3>
+              <ProjectTimeline projects={projects} />
+            </div>
+          </div>
+        </section>
+      </Element>
+
+      {/* Clients Section */}
+      <Element name="clients">
+        <section className="py-12 sm:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+                We're proud to partner with leading organizations across various industries
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+              {clients.map((client, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg hover:shadow-md transition-shadow"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="w-full h-12 object-contain grayscale hover:grayscale-0 transition-all"
+                  />
+                  <p className="text-xs text-center mt-2 text-gray-600">{client.name}</p>
                 </motion.div>
               ))}
             </div>
@@ -295,18 +478,21 @@ const HomePage = () => {
               <div className="bg-blue-800 rounded-lg p-6 sm:p-8">
                 <Phone className="mx-auto mb-4 text-blue-200" size={48} />
                 <h3 className="text-xl font-semibold mb-4">Phone</h3>
-                <p className="text-blue-100">+91 98765 43210</p>
-                <p className="text-blue-100">+91 87654 32109</p>
+                <a href="tel:+919876543210" className="text-blue-100 hover:text-white transition-colors block">
+                  +91 98765 43210
+                </a>
+                <a href="tel:+918765432109" className="text-blue-100 hover:text-white transition-colors block">
+                  +91 87654 32109
+                </a>
               </div>
 
               <div className="bg-blue-800 rounded-lg p-6 sm:p-8">
                 <Mail className="mx-auto mb-4 text-blue-200" size={48} />
                 <h3 className="text-xl font-semibold mb-4">Email</h3>
-                <a href="mailto:info@qaamenterprises.com" className="text-blue-100 hover:text-white transition-colors">
+                <a href="mailto:info@qaamenterprises.com" className="text-blue-100 hover:text-white transition-colors block">
                   info@qaamenterprises.com
                 </a>
-                <br />
-                <a href="mailto:projects@qaamenterprises.com" className="text-blue-100 hover:text-white transition-colors">
+                <a href="mailto:projects@qaamenterprises.com" className="text-blue-100 hover:text-white transition-colors block">
                   projects@qaamenterprises.com
                 </a>
               </div>
@@ -376,6 +562,9 @@ const HomePage = () => {
 
       {/* Floating WhatsApp Button */}
       <FloatingWhatsApp />
+
+      {/* Back to Top Button */}
+      <BackToTop />
     </div>
   );
 };
