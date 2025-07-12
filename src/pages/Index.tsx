@@ -650,7 +650,7 @@ const services = [
 
           <div className="border-t border-gray-700 mt-8 pt-8 text-center">
             <p className="text-gray-300">
-              © 2024 QAAM Enterprises. All rights reserved. | Established 2009
+              © {new Date().getFullYear()} QAAM Enterprises. All rights reserved. | Established 2009
             </p>
           </div>
         </div>
