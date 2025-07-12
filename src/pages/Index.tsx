@@ -422,7 +422,7 @@ const HomePage = () => {
 
               {/* CEO Quote */}
               <blockquote className="text-base sm:text-lg text-gray-700 italic leading-relaxed text-center">
-                "Since founding QAAM Enterprises in 2009, our mission has been to provide unparalleled geomembrane and geotextile solutions that protect our environment and serve our communities. With over 15 years of experience, we have successfully completed hundreds of projects across Pakistan and beyond. Our commitment to quality, innovation, and environmental stewardship drives everything we do. We take pride in our skilled team, cutting-edge technology, and unwavering dedication to client satisfaction. As we look to the future, QAAM Enterprises remains committed to being your trusted partner in environmental containment solutions."
+                "Since 2009, QAAM Enterprises has delivered expert geomembrane and geotextile installation services across Pakistan. With 15+ years of experience in environmental containment, canal lining, and industrial waste solutions, we’re committed to quality, innovation, and client satisfaction. QAAM is your trusted partner for reliable and sustainable geomembrane liners and geotextile fabric solutions."
               </blockquote>
 
               {/* CEO Signature Block (Optional) */}
