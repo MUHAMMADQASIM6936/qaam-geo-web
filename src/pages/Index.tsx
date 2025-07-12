@@ -353,29 +353,29 @@ const HomePage = () => {
               <div>
                 <h3 className="text-2xl font-bold text-blue-900 mb-6">Our Journey Since 2009</h3>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  <strong>QAAM ENTERPRISES Inc.</strong> is proudly recognized as the pioneer in the installation of geomembrane<strong>(HDPE, LDPE, LLDPE)</strong>, geotextile, and PVC membrane systems  in Pakistan. Since 2009, we have consistently delivered cutting-edge environmental containment solutions, setting industry standards through innovation, technical expertise, and an unwavering commitment to quality and sustainability.
-                </p>
-
-
-                <p className="text-gray-700 mb-6 leading-relaxed">
-                  Founded in 2009, QAAM Enterprises has been at the forefront of geomembrane and geotextile solutions in Pakistan. What began as a vision to provide reliable environmental containment solutions has now grown into a name recognized across major infrastructure and utility sectors. <strong>As pioneers in the field, we have led the way in delivering comprehensive supply and installation of GeoMembrane systems</strong>, shaping industry standards across the region.
+                  <strong>QAAM ENTERPRISES Inc.</strong> is proudly recognized as the pioneer in the professional installation of geomembrane liners <strong>(HDPE, LDPE, LLDPE)</strong>, geotextile fabric, and PVC membrane systems in Pakistan. Since 2009, we have consistently delivered cutting-edge environmental containment and waterproofing solutions, setting industry standards through innovation, technical expertise, and an unwavering commitment to quality, durability, and sustainability.
                 </p>
 
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  With over 15 years of industry experience, we have successfully delivered hundreds of projects including water treatment plants, canal lining, industrial waste containment systems, and networking infrastructure installations. Our strength lies in delivering tailored, innovative solutions that adapt to each client’s unique requirements—setting us apart in the industry.
+                  Founded in 2009, QAAM Enterprises has been at the forefront of geomembrane and geotextile solutions in Pakistan. What began as a vision to provide reliable environmental containment solutions has now grown into a name recognized across major infrastructure, water management, and utility sectors. <strong>As pioneers in the field, we have led the way in delivering comprehensive supply and professional installation of geomembrane systems</strong>, shaping industry standards and serving as trusted geomembrane contractors across the region.
                 </p>
 
-
-
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  With over 15 years of industry experience, we have successfully delivered hundreds of projects including water treatment plant lining, canal lining, industrial waste containment systems, and networking infrastructure installations. Our strength lies in delivering tailored, innovative geomembrane and geotextile installation services that meet the highest standards—making us the preferred choice for geosynthetic lining solutions in Pakistan.
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                   <div className="bg-white p-6 rounded-lg shadow-md">
                     <h4 className="font-bold text-blue-900 mb-2">Our Mission</h4>
-                    <p className="text-gray-600 text-sm">To provide innovative, reliable, and sustainable environmental solutions that protect our planet while serving our communities.</p>
+                    <p className="text-gray-600 text-sm">
+                      Deliver reliable and sustainable geomembrane and geotextile solutions that protect the environment.
+                    </p>
                   </div>
                   <div className="bg-white p-6 rounded-lg shadow-md">
                     <h4 className="font-bold text-blue-900 mb-2">Our Vision</h4>
-                    <p className="text-gray-600 text-sm">To be the leading provider of geomembrane and geotextile solutions across India, setting new standards in quality and innovation.</p>
+                    <p className="text-gray-600 text-sm">
+                      To be Pakistan’s top provider of quality geomembrane liners, geotextile fabrics, and containment systems.
+                    </p>
                   </div>
                 </div>
               </div>
