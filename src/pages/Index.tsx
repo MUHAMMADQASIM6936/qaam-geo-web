@@ -70,7 +70,7 @@ const HomePage = () => {
     },
     {
       id: 2,
-      title: 'ARY Laguna Karachi – Mega Group',
+      title: 'ARY Laguna Karachi - Mega Group',
       client: 'ARY Group',
       location: 'Karachi, Pakistan',
       scope: 'Waterproofing and geotextile installation over 850,000 square feet for ARY’s mega housing development.',
@@ -95,7 +95,7 @@ const HomePage = () => {
       title: 'Oil and Gas Development Company Limited (OGDCL)',
       client: 'OGDCL',
       location: 'Pakistan (Multiple Sites)',
-      timeline: '2009 – 2024',
+      timeline: '2009 - 2024',
       year: '2009',
       scope: 'HDPE geomembrane lining services for oil & gas containment across various OGDCL sites. Total area: 604,089 sqm.',
       image: 'https://www.earthshields.com/wp-content/uploads/2021/04/Chemical-Tank-Lining-For-Oil-Storage-Tanks-In-Iraq-1.jpg',
@@ -108,7 +108,7 @@ const HomePage = () => {
       title: 'Pakistan Petroleum Limited',
       client: 'PPL',
       location: 'Pakistan (Multiple Fields)',
-      timeline: '2011 – 2018',
+      timeline: '2011 - 2018',
       year: '2011',
       scope: 'Large-scale geomembrane lining projects covering 5,143,280 square meters at various PPL oil field sites.',
       image: 'https://image.made-in-china.com/203f0j00UkMpcWECqaqf/Leakproof-2mm-HDPE-Smooth-Geomembrane-Liner-for-Oil-and-Gas-Project.webp',
@@ -144,7 +144,7 @@ const HomePage = () => {
     },
     {
       id: 8,
-      title: 'MOL Pakistan – Oil and Gas Site at KPK',
+      title: 'MOL Pakistan - Oil and Gas Site at KPK',
       client: 'MOL Pakistan',
       location: 'Khyber Pakhtunkhwa, Pakistan',
       timeline: '2014',
@@ -157,7 +157,7 @@ const HomePage = () => {
     },
     {
       id: 9,
-      title: 'LWMC Sanitary Landfill Project – Lakho Dair',
+      title: 'LWMC Sanitary Landfill Project - Lakho Dair',
       client: 'Lahore Waste Management Company',
       location: 'Lahore, Punjab',
       timeline: '2014',
@@ -188,11 +188,11 @@ const HomePage = () => {
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxvRF0YogQ66NnDDxxUo7VoYQjraNiYTE7yiTr7u1XJ63TpwhxeojKeGNV_mUEnmuTix0&usqp=CAU'
     },
     {
-      name: 'China Hydro – Nabisar Project',
+      name: 'China Hydro - Nabisar Project',
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFs4C2ffHNupjoQnIDJ4IS7gCx23S1HAmUkQ&s'
     },
     {
-      name: 'LWMC – Lahore Waste Management Company',
+      name: 'LWMC - Lahore Waste Management Company',
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThLVX_4czsFDLgA9bAupNfVtKkFcwvYeyANg&s'
     },
     {
@@ -200,7 +200,7 @@ const HomePage = () => {
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQCusqz2L5OzE861OGoa0qt9IzvV9VwGB4Pg&s'
     },
     {
-      name: 'Packages Group – Bulleh Shah Packaging',
+      name: 'Packages Group - Bulleh Shah Packaging',
       logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHJcct9i-NLdQu4yiCSapmK0U5BoK8wv3xUhZwzaKpCFXzf8DpiYiIKC62We8nhy4ZX_I&usqp=CAU'
     }
   ];
@@ -568,7 +568,7 @@ const HomePage = () => {
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">Contact Us</h2>
               <p className="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto">
-                Get in touch with us for your geomembrane and geotextile installation needs
+                Get in touch for expert geomembrane and geotextile installation services — waterproofing, lining, and protection you can trust.
               </p>
             </div>
 
@@ -637,8 +637,7 @@ const HomePage = () => {
                 <li>Geotextile Installation</li>
                 <li>Composite Membrane Installation</li>
                 <li>Pond, Tank, Canal, Building & Tunnel Lining</li>
-
-                <li>Internal/External Telecommunication</li>
+                <li>Internal & External Telecommunication</li>
               </ul>
             </div>
           </div>
