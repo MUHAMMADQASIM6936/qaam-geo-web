@@ -25,35 +25,35 @@ const HomePage = () => {
 
   const services = [
     {
-      title: 'Geomembrane Installation – HDPE & PVC Liners',
+      title: 'Geomembrane Installation - HDPE & PVC Liners',
       description:
-        'Professional installation of high-quality HDPE and PVC geomembrane liners for landfills, ponds, canals, tanks, and containment systems.',
+        'Installation of HDPE and PVC geomembrane liners for ponds, canals, landfills, and tanks. Ideal for waterproofing, fish ponds, and construction lining applications.',
       image: 'https://image.made-in-china.com/2f0j00hfGRZconbjzV/ASTM-Standard-PVC-Geomembrane-for-Landfill-with-Factory-Price.webp'
     },
     {
-      title: 'Geotextile Installation',
+      title: 'Geotextile Installation - Soil & Drainage Solutions',
       description:
-        'Expert installation of geotextiles for soil stabilization, erosion control, drainage, and filtration in various civil engineering projects.',
+        'Geotextile installation for soil stabilization, drainage, erosion control, canal lining, land filling, and roof gardening in civil engineering projects.',
       image: 'https://www.bpmgeosynthetics.com/wp-content/uploads/2025/06/Successful-Geotextile-Installation.jpg'
     },
     {
       title: 'Composite Membrane Installation',
       description:
-        'Installation of advanced composite membranes that combine geomembranes and geotextiles for superior containment performance.',
+        'Advanced composite membrane installation combining geotextile and geomembrane for superior waterproofing in dam lining, landfills, and containment systems.',
       image: 'https://www.bpmgeosynthetics.com/wp-content/uploads/2024/07/Reinforced-1.5mm-Composite-Geomembrane-Liner-for-Tailing-Bottom-Lining.jpg'
     },
     {
       title: 'Pond, Tank, Canal, Building & Tunnel Lining',
       description:
-        'Lining services for ponds, tanks, canals, buildings, and tunnels to ensure long-term waterproofing and structural protection.',
+        'Lining solutions for fish ponds, canals, tanks, tunnels, and buildings to ensure long-term waterproofing and structural protection in construction projects.',
       image: 'https://hbbgeosales.co.uk/wp-content/uploads/2020/08/Attenuation-Pond-Liner-1-2-scaled.jpg'
     },
     {
-      title: 'Internal/External Telecommunication',
+      title: 'Internal & External Telecommunication',
       description:
-        'Design and deployment of telecommunication infrastructure, including indoor and outdoor wiring, cabling, and routing.',
+        'Design and deployment of telecommunication systems, including indoor/outdoor wiring, structured cabling, and fiber routing for industrial and commercial use.',
       image: 'https://c8.alamy.com/comp/C6299T/workers-laying-a-600km-stretch-of-fibre-optic-cable-between-johannesburg-C6299T.jpg'
-    },
+    }
   ];
 
   const projects = [
@@ -494,8 +494,8 @@ const HomePage = () => {
                     key={type}
                     onClick={() => setProjectFilter(type)}
                     className={`px-6 py-2 rounded-full transition-colors ${projectFilter === type
-                        ? 'bg-blue-900 text-white'
-                        : 'bg-white text-gray-700 hover:bg-blue-100'
+                      ? 'bg-blue-900 text-white'
+                      : 'bg-white text-gray-700 hover:bg-blue-100'
                       }`}
                   >
                     {type === 'all' ? 'All Projects' : type}
