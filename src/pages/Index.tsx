@@ -624,8 +624,8 @@ const HomePage = () => {
               <h4 className="text-lg font-semibold mb-4">Contact Information</h4>
               <div className="space-y-2 text-gray-300">
                 <p>Phone: +92 30044 06438</p>
-                <a href="mailto:qaamenterprises@outlook.com" className="block hover:text-white transition-colors">
-                  Email: qaamenterprises@outlook.com
+                <a href="mailto:qaamenterprises70@outlook.com" className="block hover:text-white transition-colors">
+                  Email: qaamenterprises70@outlook.com
                 </a>
               </div>
             </div>
