@@ -586,7 +586,7 @@ const HomePage = () => {
                 <Mail className="mx-auto mb-4 text-blue-200" size={48} />
                 <h3 className="text-xl font-semibold mb-4">Email</h3>
                 <a href="mailto:qaamenterprises@outlook.com" className="block hover:text-white transition-colors">
-                  qaamenterprises@outlook.com
+                  qaamenterprises70@outlook.com
                 </a>
               </div>
 
